@@ -10,5 +10,5 @@ build
 *.ipr
 *.iws
 
-*/testng.xml
+resources
 /test-output
