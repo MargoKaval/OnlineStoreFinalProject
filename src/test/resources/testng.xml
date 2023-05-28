@@ -1,0 +1,14 @@
+<!DOCTYPE suite
+        SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite">
+    <test name="Test">
+        <packages>
+            <package name="tests"/>
+        </packages>
+    </test>
+    <listeners>
+        <listener class-name="org.testng.reporters.TestHTMLReporter"/>
+    </listeners>
+    <parameter name="name" value="Doctor"/>
+    <parameter name="surname" value="Pepper"/>
+</suite>
