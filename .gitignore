@@ -5,7 +5,7 @@
 build
 
 # Ignore IntelliJ local configuration files
-.idea
+/.idea/
 *.iml
 *.ipr
 *.iws
