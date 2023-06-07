@@ -17,7 +17,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 
-        driver.get("https://www.saucedemo.com/");
+        driver.get("https://www.fithealthy.eu/en/");
     }
     @AfterMethod
     public void tearDown() {
