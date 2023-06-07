@@ -9,6 +9,6 @@
     <listeners>
         <listener class-name="org.testng.reporters.TestHTMLReporter"/>
     </listeners>
-    <parameter name="name" value="Doctor"/>
-    <parameter name="surname" value="Pepper"/>
+    <parameter name="test_username" value="merame@inbox.lv"/>
+    <parameter name="test_password" value="itisSTR0NGpass"/>
 </suite>
