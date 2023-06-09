@@ -3,7 +3,7 @@
 <suite name="Test Suite">
     <test name="Test">
         <classes>
-            <class name="tests.LoginTest"/>
+            <class name="tests.RemoveFromBasketTest"/>
         </classes>
     </test>
     <listeners>

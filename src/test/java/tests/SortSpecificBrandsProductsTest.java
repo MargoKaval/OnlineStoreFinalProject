@@ -3,20 +3,24 @@ package tests;
 import models.User;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import pages.BrandPage;
 import pages.InfoPage;
 import pages.LoginPage;
 
-public class LoginTest extends BaseTest {
+public class SortSpecificBrandsProductsTest extends BaseTest{
     @Test
     @Parameters({"test_username", "test_password"})
-    public void successfulLoginProcedure(String email, String paswrd) throws InterruptedException {
-        //Create necessary page objects
+    public void sortByHighPriceSpecBrandProduct(String email, String paswrd) throws InterruptedException {
         InfoPage infoPage = new InfoPage();
         LoginPage loginPage = new LoginPage();
         User u = new User(email, paswrd);
+        BrandPage brandPage = new BrandPage();
 
-        //Run scenario
         infoPage.goToLoginPage();
         loginPage.loginToTestAcct(u.getUsername(), u.getPassword());
+        infoPage.hoverMouseOnBrandsTab();
+        infoPage.chooseSpecificBrand();
+        brandPage.clickCheckbox();
+        brandPage.sortByHighPrice();
     }
 }

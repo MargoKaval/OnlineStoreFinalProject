@@ -11,6 +11,6 @@ public class BaseTest {
         getCurrentDriver().get("https://www.fithealthy.eu/en/");
         waitToLoad();
     }
-    @AfterMethod
-    public void tearDown() { getCurrentDriver().quit(); }
+    /*@AfterMethod
+    public void tearDown() { getCurrentDriver().quit(); }*/
 }
