@@ -7,16 +7,20 @@ import static utils.DriverProvider.getCurrentDriver;
 import static utils.Wait.waitForPageToLoad;
 
 public class BrandPage {
-    private String checkboxWheyProteinXpath = "//li/label/input[@value='217']";
+    private String wheyProteinCheckboxXpath = "//li/label/input[@value='217']";
+    private String inStockCheckboxXpath = "//label/input[@ng-model='grid.inStockFirst']";
     private String dropdownSortByXpath = "//div[@class='btn-group f-lang-switch-form__select']/button[@class='btn btn-default btn-sm dropdown-toggle']";
     private String highPriceSortingCSS = "a[ng-click=\"$event.preventDefault(); grid.onSelectSorting('price', 'desc');\"]";
 
     public void clickCheckbox() {
-        WebElement checkboxWheyProtein = getCurrentDriver().findElement(By.xpath(checkboxWheyProteinXpath));
-        checkboxWheyProtein.click();
+        WebElement wheyProteinCheckbox = getCurrentDriver().findElement(By.xpath(wheyProteinCheckboxXpath));
+        wheyProteinCheckbox.click();
+        waitForPageToLoad();
+
+        WebElement inStockCheckbox = getCurrentDriver().findElement(By.xpath(inStockCheckboxXpath));
+        inStockCheckbox.click();
         waitForPageToLoad();
     }
-
     public void sortByHighPrice() {
         WebElement dropdownSortBy = getCurrentDriver().findElement(By.xpath(dropdownSortByXpath));
         dropdownSortBy.click();
