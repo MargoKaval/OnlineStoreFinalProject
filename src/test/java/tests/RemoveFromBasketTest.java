@@ -3,10 +3,7 @@ package tests;
 import models.User;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.BrandPage;
-import pages.InfoPage;
-import pages.LoginPage;
-import pages.ProductPage;
+import pages.*;
 
 public class RemoveFromBasketTest extends BaseTest{
     @Test
@@ -17,6 +14,7 @@ public class RemoveFromBasketTest extends BaseTest{
         User u = new User(email, paswrd);
         BrandPage brandPage = new BrandPage();
         ProductPage productPage = new ProductPage();
+        BasketPage basketPage = new BasketPage();
 
         infoPage.goToLoginPage();
         loginPage.loginToTestAcct(u.getUsername(), u.getPassword());
@@ -24,6 +22,9 @@ public class RemoveFromBasketTest extends BaseTest{
         infoPage.chooseSpecificBrand();
         brandPage.clickCheckbox();
         brandPage.sortByHighPrice();
-        /*productPage.clickOnSpecificProduct();*/
+        productPage.clickOnSpecificProduct();
+        productPage.addToCart();
+        basketPage.goToBasket();
+        basketPage.clearBasket();
     }
 }
