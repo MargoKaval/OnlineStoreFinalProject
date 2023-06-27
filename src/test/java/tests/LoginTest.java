@@ -10,7 +10,7 @@ import pages.LoginPage;
 public class LoginTest extends BaseTest {
     @Test
     @Parameters({"test_username", "test_password"})
-    public void successfulLoginProcedure(String email, String paswrd) throws InterruptedException {
+    public void successfulLoginProcedure(String email, String paswrd) {
         //Create necessary page objects
         InfoPage infoPage = new InfoPage();
         LoginPage loginPage = new LoginPage();

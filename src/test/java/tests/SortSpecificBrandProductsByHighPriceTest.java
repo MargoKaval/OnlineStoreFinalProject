@@ -10,7 +10,7 @@ import pages.LoginPage;
 public class SortSpecificBrandProductsByHighPriceTest extends BaseTest{
     @Test
     @Parameters({"test_username", "test_password"})
-    public void sortByHighPriceSpecBrandProduct(String email, String paswrd) throws InterruptedException {
+    public void sortByHighPriceSpecBrandProduct(String email, String paswrd) {
         InfoPage infoPage = new InfoPage();
         LoginPage loginPage = new LoginPage();
         User u = new User(email, paswrd);

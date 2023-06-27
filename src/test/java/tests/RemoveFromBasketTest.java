@@ -8,7 +8,7 @@ import pages.*;
 public class RemoveFromBasketTest extends BaseTest{
     @Test
     @Parameters({"test_username", "test_password"})
-    public void removeFromBasket(String email, String paswrd) throws InterruptedException {
+    public void removeFromBasket(String email, String paswrd) {
         InfoPage infoPage = new InfoPage();
         LoginPage loginPage = new LoginPage();
         User u = new User(email, paswrd);
