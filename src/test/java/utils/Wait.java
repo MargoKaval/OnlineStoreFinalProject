@@ -16,4 +16,12 @@ public class Wait {
     private static void init() {
         wait = new WebDriverWait(getCurrentDriver(), Duration.ofSeconds(2));
     }
+
+    //below is a custom method that pauses the execution for 3 seconds
+    public static void waitForPageToLoad() {
+        try {Thread.sleep(2000);}
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
