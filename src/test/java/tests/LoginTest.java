@@ -1,6 +1,7 @@
 package tests;
 
 import models.User;
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.InfoPage;
@@ -18,5 +19,6 @@ public class LoginTest extends BaseTest {
         //Run scenario
         infoPage.goToLoginPage();
         loginPage.loginToTestAcct(u.getUsername(), u.getPassword());
+        Assert.assertTrue(infoPage.isLogoutBtnPresent());
     }
 }
