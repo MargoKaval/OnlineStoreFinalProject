@@ -21,7 +21,7 @@ public class SortSpecificBrandProductsByHighPriceTest extends BaseTest{
         loginPage.loginToTestAcct(u.getUsername(), u.getPassword());
         infoPage.hoverMouseOnBrandsTab();
         infoPage.chooseSpecificBrand();
-        brandPage.clickInStockCheckbox();
+        brandPage.clickOutInStockCheckbox();
         brandPage.sortByHighPrice();
         Assert.assertTrue(brandPage.areProductsSortedByHighPrice());
     }

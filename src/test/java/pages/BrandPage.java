@@ -15,7 +15,7 @@ public class BrandPage {
     private String expectedSortingTxt = "High price";
     private String firstInListProductXpath = "(//div/a[@class='f-product'])[1]";
 
-    public void clickInStockCheckbox() {
+    public void clickOutInStockCheckbox() {
         WebElement inStockCheckbox = getCurrentDriver().findElement(By.xpath(inStockCheckboxXpath));
         inStockCheckbox.click();
         waitForPageToLoad();
