@@ -20,6 +20,11 @@ public class InfoPage {
         //Perform action
         loginForm.click();
     }
+    public Boolean isLogoutBtnPresent() {
+        String logoutBtnTxt = getCurrentDriver().findElement(By.xpath(logoutBtnXpathForTxt)).getText();
+        if (expectedLogoutBtnTxt.equalsIgnoreCase(logoutBtnTxt)) return true;
+        else return false;
+    }
     public void hoverMouseOnBrandsTab() {
         WebElement brandsTab = getCurrentDriver().findElement(By.xpath(brandsTabXpath));
         actions.moveToElement(brandsTab).perform();
@@ -28,10 +33,5 @@ public class InfoPage {
     public void chooseSpecificBrand() {
         WebElement specificBrand = getCurrentDriver().findElement(By.xpath(specificBrandXpath));
         specificBrand.click();
-    }
-    public Boolean isLogoutBtnPresent() {
-        String logoutBtnTxt = getCurrentDriver().findElement(By.xpath(logoutBtnXpathForTxt)).getText();
-        if (expectedLogoutBtnTxt.equalsIgnoreCase(logoutBtnTxt)) return true;
-        else return false;
     }
 }
