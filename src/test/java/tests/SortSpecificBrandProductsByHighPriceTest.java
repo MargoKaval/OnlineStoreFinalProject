@@ -1,6 +1,7 @@
 package tests;
 
 import models.User;
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.BrandPage;
@@ -20,7 +21,8 @@ public class SortSpecificBrandProductsByHighPriceTest extends BaseTest{
         loginPage.loginToTestAcct(u.getUsername(), u.getPassword());
         infoPage.hoverMouseOnBrandsTab();
         infoPage.chooseSpecificBrand();
-        brandPage.clickCheckbox();
+        brandPage.clickInStockCheckbox();
         brandPage.sortByHighPrice();
+        Assert.assertTrue(brandPage.areProductsSortedByHighPrice());
     }
 }

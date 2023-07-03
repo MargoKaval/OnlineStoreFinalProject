@@ -1,6 +1,7 @@
 package tests;
 
 import models.User;
+import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.*;
@@ -20,11 +21,11 @@ public class RemoveFromBasketTest extends BaseTest{
         loginPage.loginToTestAcct(u.getUsername(), u.getPassword());
         infoPage.hoverMouseOnBrandsTab();
         infoPage.chooseSpecificBrand();
-        brandPage.clickCheckbox();
-        brandPage.sortByHighPrice();
-        productPage.clickOnSpecificProduct();
+        brandPage.clickSpecificFilterCheckbox();
+        brandPage.clickOnFirstProductInList();
         productPage.addToCart();
-        basketPage.goToBasket();
+        productPage.clickOnCheckout();
         basketPage.clearBasket();
+        Assert.assertTrue(basketPage.isBasketEmpty());
     }
 }
