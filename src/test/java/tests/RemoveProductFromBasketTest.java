@@ -9,7 +9,7 @@ import pages.*;
 public class RemoveProductFromBasketTest extends BaseTest{
     @Test
     @Parameters({"test_username", "test_password"})
-    public void removeFromBasket(String email, String paswrd) {
+    public void removeProductFromBasket(String email, String paswrd) {
         InfoPage infoPage = new InfoPage();
         LoginPage loginPage = new LoginPage();
         User u = new User(email, paswrd);
