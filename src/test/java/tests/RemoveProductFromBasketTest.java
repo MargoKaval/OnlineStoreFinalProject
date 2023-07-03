@@ -6,7 +6,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.*;
 
-public class RemoveFromBasketTest extends BaseTest{
+public class RemoveProductFromBasketTest extends BaseTest{
     @Test
     @Parameters({"test_username", "test_password"})
     public void removeFromBasket(String email, String paswrd) {
@@ -24,7 +24,7 @@ public class RemoveFromBasketTest extends BaseTest{
         brandPage.clickSpecificFilterCheckbox();
         brandPage.clickOnFirstProductInList();
         productPage.addToCart();
-        productPage.clickOnCheckout();
+        productPage.proceedToBasket();
         basketPage.clearBasket();
         Assert.assertTrue(basketPage.isBasketEmpty());
     }
